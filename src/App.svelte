@@ -5,6 +5,7 @@ import Image from './Image.svelte';
 import TextFieldWidth from './TextFieldWidth.svelte';
 import TextFieldHeight from './TextFieldHeight.svelte';
 
+import ButtonGreyScale from './ButtonGrayScale.svelte';
 import ButtonDownload from './ButtonDownload.svelte';
 
 let width  = null;
@@ -39,6 +40,8 @@ $: console.debug("GreyScale: " + greyScale);
     <TextFieldHeight />
 
     <br><br>
+
+    <ButtonGreyScale />
 
     <ButtonDownload />
 </main>
