@@ -1,16 +1,26 @@
 <script>
 
+import { image } from './stores/image';
+
+$: console.debug("Width: " + $image.width);
+
+let keydownCallback = function (e) {
+    switch(e.key) {
+        case "ArrowUp":
+            $image.width++;
+        break;
+        case "ArrowDown":
+            $image.width--;
+        break;
+    }
+}
+
 </script>
 
-<span class="textfield" id="tf_width">
-    <input type="text" bind:value={width}>
+<span class="textfield-wrapper" id="tf_width">
+    <input class="textfield" type="text" bind:value={$image.width} tabindex=0 on:keydown={keydownCallback}>
 </span>
 
 <style>
-.textfield {
 
-}
-.textfield > input {
-
-}
 </style>

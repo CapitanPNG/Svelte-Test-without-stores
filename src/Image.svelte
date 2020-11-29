@@ -1,16 +1,19 @@
 <script>
 
-export let img = document.getElementById("img");
-
-$: img.style.width  = width;
-$: img.style.height = height;
+import { image } from './stores/image';
 
 </script>
 
 <div class="img-container">
-    <img src="sample.jpg" alt="img" id="img">
+    <img src="image.jpg" alt="img" id="img" {...$image}>
 </div>
 
 <style>
+    #img {
+        /*width: 640px;
+        height: 360px;*/
 
+        border-radius: 4px;
+        box-shadow: 1px 1px 10px 1px #242424;
+    }
 </style>
