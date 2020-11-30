@@ -1,31 +1,28 @@
 <script>
 
-import { grayscale } from './stores/grayscale';
-import { image } from './stores/image';
-
 let downloadImage = function () {
     let canvas = document.createElement("canvas");
 
-    canvas.width  =  $image.width;
-    canvas.height = $image.height;
+    canvas.width  =  image.width;
+    canvas.height = image.height;
 
     canvas.style.position =           "absolute";
 
-    canvas.style.width    =  $image.width + "px";
-    canvas.style.height   = $image.height + "px";
+    canvas.style.width    =  image.width + "px";
+    canvas.style.height   = image.height + "px";
 
     canvas.style.left     =                "0px";
     canvas.style.top      =                "0px";
 
     let ctx = canvas.getContext("2d");
 
-    ctx.filter = "grayscale(" + ($grayscale ? "100" : "0") + "%)";
+    ctx.filter = "grayscale(" + (grayscale ? "100" : "0") + "%)";
     ctx.drawImage(
         document.getElementById("img"),
         0,
         0,
-        $image.width,
-        $image.height
+        image.width,
+        image.height
     );
 
     /*document.body.innerHTML = "";

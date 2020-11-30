@@ -1,11 +1,9 @@
 <script>
 
-import { image } from './stores/image';
-
 </script>
 
 <div class="img-container">
-    <img src="image.jpg" alt="img" id="img" {...$image}>
+    <img src="image.jpg" alt="img" id="img" {...image}>
 </div>
 
 <style>

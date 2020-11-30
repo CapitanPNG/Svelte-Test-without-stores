@@ -1,21 +1,19 @@
 <script>
 
-import { grayscale } from './stores/grayscale';
-
 let setGrayscale = function (value) {
     img.style.filter = "grayscale(" + (value ? "100" : "0") + "%)";
 }
 
 let setGrayscaleButton = function () {
-    $grayscale = !$grayscale;
+    grayscale = !grayscale;
     
-    setGrayscale($grayscale);
+    setGrayscale(grayscale);
 }
 
 </script>
 
 <div class="button" id="btn_grayscale" on:click={()=>{setGrayscaleButton();}} role=button tabindex=0>
-    {#if $grayscale}
+    {#if grayscale}
         Disable
     {:else}
         Enable
