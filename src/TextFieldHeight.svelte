@@ -1,14 +1,14 @@
 <script>
 
-$: console.debug("Height: " + image.height);
+$: console.debug("Height: " + window.image.height);
 
 let keydownCallback = function (e) {
     switch(e.key) {
         case "ArrowUp":
-            image.height++;
+            window.image.height++;
         break;
         case "ArrowDown":
-            image.height--;
+            window.image.height--;
         break;
     }
 }
@@ -16,7 +16,7 @@ let keydownCallback = function (e) {
 </script>
 
 <span class="textfield-wrapper" id="tf_height">
-    <input class="textfield" type="text" bind:value={image.height} tabindex=0 on:keydown={keydownCallback}>
+    <input class="textfield" type="text" bind:value={window.image.height} tabindex=0 on:keydown={keydownCallback}>
 </span>
 
 <style>

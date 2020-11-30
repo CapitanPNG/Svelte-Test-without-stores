@@ -3,26 +3,26 @@
 let downloadImage = function () {
     let canvas = document.createElement("canvas");
 
-    canvas.width  =  image.width;
-    canvas.height = image.height;
+    canvas.width  =  window.image.width;
+    canvas.height = window.image.height;
 
     canvas.style.position =           "absolute";
 
-    canvas.style.width    =  image.width + "px";
-    canvas.style.height   = image.height + "px";
+    canvas.style.width    =  window.image.width + "px";
+    canvas.style.height   = window.image.height + "px";
 
     canvas.style.left     =                "0px";
     canvas.style.top      =                "0px";
 
     let ctx = canvas.getContext("2d");
 
-    ctx.filter = "grayscale(" + (grayscale ? "100" : "0") + "%)";
+    ctx.filter = "grayscale(" + (window.grayscale ? "100" : "0") + "%)";
     ctx.drawImage(
         document.getElementById("img"),
         0,
         0,
-        image.width,
-        image.height
+        window.image.width,
+        window.image.height
     );
 
     /*document.body.innerHTML = "";

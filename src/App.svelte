@@ -5,12 +5,12 @@ import ToolBar from './ToolBar.svelte';
 
 import { onMount } from 'svelte';
 
-var image = {
+window.image = {
     width:  640,
     height: 360
 };
 
-var grayscale = false;
+window.grayscale = false;
 
 onMount(function() {
     let buttons = document.querySelectorAll(".button");

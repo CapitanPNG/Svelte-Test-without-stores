@@ -5,15 +5,15 @@ let setGrayscale = function (value) {
 }
 
 let setGrayscaleButton = function () {
-    grayscale = !grayscale;
+    window.grayscale = !window.grayscale;
     
-    setGrayscale(grayscale);
+    setGrayscale(window.grayscale);
 }
 
 </script>
 
 <div class="button" id="btn_grayscale" on:click={()=>{setGrayscaleButton();}} role=button tabindex=0>
-    {#if grayscale}
+    {#if window.grayscale}
         Disable
     {:else}
         Enable
