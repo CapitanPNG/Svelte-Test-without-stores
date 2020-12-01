@@ -33,6 +33,14 @@ onMount(function() {
             }
         )
     });
+
+    let img = document.getElementById("img");
+
+    for(let key in window.image) {
+        img[key] = window.image[key];
+
+        document.getElementById("tf_" + key).value = window.image[key];
+    }
 });
 
 const keyMap = {

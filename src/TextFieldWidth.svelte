@@ -11,12 +11,27 @@ let keydownCallback = function (e) {
             window.image.width--;
         break;
     }
+
+    switch(e.key) {
+        case "ArrowUp":
+        case "ArrowDown":
+            document.getElementById("tf_width").value = window.image.width;
+
+            document.getElementById("img").width = window.image.width;
+        break;
+    }
+}
+
+let keyupCallback = function (e) {
+    window.image.width = e.target.value;
+
+    document.getElementById("img").width = window.image.width;
 }
 
 </script>
 
-<span class="textfield-wrapper" id="tf_width">
-    <input class="textfield" type="text" bind:value={window.image.width} tabindex=0 on:keydown={keydownCallback}>
+<span class="textfield-wrapper">
+    <input id="tf_width" class="textfield" type="text" tabindex=0 on:keydown={keydownCallback} on:keyup={keyupCallback}>
 </span>
 
 <style>

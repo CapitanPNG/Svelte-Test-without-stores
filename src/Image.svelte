@@ -3,7 +3,7 @@
 </script>
 
 <div class="img-container">
-    <img src="image.jpg" alt="img" id="img" {...image}>
+    <img src="image.jpg" alt="img" id="img" {...window.image}>
 </div>
 
 <style>
